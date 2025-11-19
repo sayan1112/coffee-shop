@@ -1,0 +1,296 @@
+/* === BASIC STYLES === */
+:root {
+  --coffee-primary: #7b3f00;
+  --coffee-secondary: #c47a4e;
+  --coffee-accent: #b68d40;
+  --coffee-light: #f6f1ed;
+  --text-dark: #2c2c2c;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--coffee-light);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === BUTTON STYLES === */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: var(--coffee-primary);
+  color: white;
+  border: 2px solid var(--coffee-primary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--coffee-primary);
+  border: 2px solid var(--coffee-primary);
+}
+
+/* === HOVER EFFECTS === */
+.btn-primary:hover {
+  background-color: var(--coffee-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(123, 63, 0, 0.4);
+}
+
+.btn-secondary:hover {
+  background-color: var(--coffee-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(123, 63, 0, 0.3);
+}
+
+/* === HERO SECTION ANIMATION === */
+.hero {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  animation: fadeInLeft 1.2s ease forwards;
+  opacity: 0;
+}
+
+.hero img {
+  animation: fadeInRight 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* === PRODUCT CARD ANIMATION === */
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--coffee-primary);
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--coffee-accent);
+}
+
+/* === ANIMATIONS KEYFRAMES === */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === SMOOTH FADE-IN ON SCROLL === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Base navbar link style */
+header nav ul li a {
+  color: #fff; /* White text */
+  text-decoration: none;
+  padding: 10px 15px;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover color change */
+header nav ul li a:hover {
+  color: #c19a6b; /* Coffee gold accent */
+}
+
+/* Underline hover animation */
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #c19a6b;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  background-color: #c19a6b; /* Coffee accent */
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.product-title{
+color: #2c2c2c;
+}
+.product-desc{
+    color: #2c2c2c;
+
+}
+.hero-banner{
+    height: 700px;
+    width: 600px;
+    border-radius: 25px;
+}
+.hero-banner {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-banner:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+/* Logo Style */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  position: relative;
+  animation: fadeInLogo 1.5s ease forwards;
+}
+
+/* Coffee Mug Icon */
+.logo-icon {
+  font-size: 2rem;
+  color: #0c0a08;
+  animation: steam 3s ease-in-out infinite;
+}
+
+/* Logo Text */
+.logo-text {
+  position: relative;
+  background: linear-gradient(90deg, #6e460e, #a85c05);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo-text span {
+  color: #dc3e05;
+  font-weight: 700;
+}
+
+/* Hover Effect */
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(216, 45, 15, 0.8);
+}
+
+.logo:hover .logo-icon {
+  color: #c86a18;
+  transform: rotate(-10deg);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-text {
+  transform: translateY(-3px);
+  text-shadow: 0 0 20px rgba(119, 62, 18, 0.8);
+}
+
+/* Animation: Logo Fade In */
+@keyframes fadeInLogo {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation: Steam Rising from Mug */
+@keyframes steam {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-8px); opacity: 0.9; }
+}
+.social-links {
+  margin-top: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.social-links a {
+  color: #d3ad7f; /* warm coffee-gold tone */
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff; /* white on hover */
+  transform: scale(1.2);
+}
