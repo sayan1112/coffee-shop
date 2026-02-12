@@ -3,36 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Shop Website</title>
+    <title>Sayan's Coffee | Artisan Roasters</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Exo:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="container header-container">
             <a href="#" class="logo">
                  <i class="fa-solid fa-mug-hot logo-icon"></i>
                 <div class="logo-text">Sayan's<span>Coffee</span></div>
-               
             </a>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a><li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li id="cart-trigger">
+                        <i class="fa-solid fa-cart-shopping" style="color: var(--coffee-gold); font-size: 20px; cursor: pointer;"></i>
+                        <span class="cart-count">0</span>
+                    </li>
                 </ul>
-                </nav>
             </nav>
             <div class="nav-btns">
                 <a href="#" class="btn btn-secondary">Sign in</a>
-                <a href="#" class="btn btn-primary">Order online</a>
+                <a href="#products" class="btn btn-primary">Order online</a>
             </div>
         </div>
      </header>
+
+     <!-- Cart Sidebar -->
+     <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p style="text-align: center; color: #666; margin-top: 50px;">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+     </div>
+
+     <!-- Toast Notification -->
+     <div id="notification" class="notification">Item added to cart!</div>
+
+    <main>
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -40,124 +64,110 @@
                         <i class="fa-solid fa-seedling"></i>
                         Ethically Sourced Beans
                     </div>
-                        <h1 class="hero-title">Artisan-Coffee<br><span>Crafted with Passion</span></h1>
-                        <p class="hero-text">Discover single-origin coffees roasted to perfection in small batches for exceptional flavor.Experience the journey from bean to cup with out master roaster.</p>
-                        <div class="hero-buttons">
-                            <a href="#products" class="btn btn-primary"> Explore Our Blends</a>
-                            <a href= "#" class="btn btn-secondary"> Visit Our Cafe</a>
-                        </div>
+                    <h1 class="hero-title">Artisan Coffee<br><span>Crafted with Passion</span></h1>
+                    <p class="hero-text">Discover single-origin coffees roasted to perfection in small batches for exceptional flavor. Experience the journey from bean to cup with our master roaster.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">Explore Our Blends</a>
+                        <a href="#contact" class="btn btn-secondary">Visit Our Cafe</a>
                     </div>
+                </div>
                 <section class="hero-banner">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="./62b3f8597772ced0979a301dca2f72b4.mp4" type="video/mp4">
-  </video>
-</section>
-
-                   
-                    
+                    <video autoplay muted loop playsinline class="hero-video">
+                        <source src="./62b3f8597772ced0979a301dca2f72b4.mp4" type="video/mp4">
+                    </video>
+                </section>
             </div>
         </section>
+
         <section class="products" id="products">
             <div class="container">
                 <div class="section-header">
-                <div class="section-subtitle">Our Selection</div>
-                <h2 class="section-title">Signature Coffee Blends</h2>
-                <p class="section-desc">Each batch is carefully roasted o highlight the unique cahrectertiscts of the beans  </p>
-            </div>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://i.pinimg.com/736x/b0/4d/18/b04d18874421fad2a349ea6d8fca7569.jpg"alt="euthopian">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-tag">BESTSELLER</div>
-                        <h3 class="product-title">Euthopian Yoiragafee</h3>
-                        <p class="product-desc">Floral notes with bright citrus acidity and a tea-like body.Light roast.</p>
-                        <div class="product-footer">
-                            <div class="product-prize">$18.91</div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                        </div>
+                    <div class="section-subtitle">Our Selection</div>
+                    <h2 class="section-title">Signature Coffee Blends</h2>
+                    <p class="section-desc">Each batch is carefully roasted to highlight the unique characteristics of the beans.</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-container" style="margin-top: 30px; position: relative; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <input type="text" id="product-search" placeholder="Search for your favorite blend..." style="width: 100%; padding: 15px 50px 15px 20px; border-radius: 30px; border: 1px solid var(--coffee-gold); background: #222; color: #fff; outline: none;">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--coffee-gold);"></i>
                     </div>
                 </div>
-                 <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://i.pinimg.com/736x/06/b8/9d/06b89d194bc96014019ad70eada9ee68.jpg"alt="supremo">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Euthopian Yoiragafee</h3>
-                        <p class="product-desc">Floral notes with bright citrus acidity and a tea-like body.Light roast.</p>
-                        <div class="product-footer">
-                            <div class="product-prize">$16.1</div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                  <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://i.pinimg.com/736x/aa/3d/4d/aa3d4defa8112efe2c198acdac395ffa.jpg"alt="supremo">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Euthopian Yoiragafee</h3>
-                        <p class="product-desc">Floral notes with bright citrus acidity and a tea-like body.Light roast.</p>
-                        <div class="product-footer">
-                            <div class="product-prize">$16.1</div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="product-grid" id="product-grid">
+                    <!-- Products loaded via JS -->
                 </div>
             </div>
         </section>
-        <footer>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
             <div class="container">
-                <div class="footer-content">
-                    <div class="footer-column">
-                        <h3>About Sayancoffee</h3>
-                        <p style="color: var(--coffee-accent); margin-bottom: 20px;">Artisan coffee roasters dedicated to quality,sustainibility</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <div class="section-header">
+                    <div class="section-subtitle">Get in Touch</div>
+                    <h2 class="section-title">Visit Our Roastery</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 style="color: var(--coffee-gold); font-size: 32px; margin-bottom: 20px;">We'd love to hear from you.</h3>
+                        <p style="margin-bottom: 30px; font-size: 18px; color: #ccc;">Whether you're curious about our beans, our process, or just want to say hi, our doors (and ears) are always open.</p>
+                        <ul class="footer-links" style="font-size: 18px;">
+                            <li><i class="fa-solid fa-location-dot" style="color: var(--coffee-gold); margin-right: 15px;"></i> 15/6 S.C. Lane, Kolkata</li>
+                            <li><i class="fa-solid fa-phone" style="color: var(--coffee-gold); margin-right: 15px;"></i> +91 9163082099</li>
+                            <li><i class="fa-solid fa-envelope" style="color: var(--coffee-gold); margin-right: 15px;"></i> hello@sayancoffee.com</li>
+                        </ul>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" id="contact-name" placeholder="John Doe" required>
                         </div>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Quick Links</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Coffee Blends</a></li>
-                            <li><a href="#">Sayan Guides</a></li>
-                            <li><a href="#">Sustainibility</a></li>
-                            <li><a href="#">WholeSale</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Contact Us</h3>
-                         <ul class="footer-links">
-                            <li><i class="fa-solid fa-address-book"></i>15/6 S.c Lane,Kolkata</li>
-                            <li><i class="fa-solid fa-phone"></i>9163082099</li>
-                            <li><i class="fa-solid fa-envelope"></i>sayand9976266@gmail.com</li>
-                            <li><i class="fa-solid fa-clock"></i>10a.m to 9.p.m</li>
-                        </ul>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="contact-email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="contact-message" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; cursor: pointer;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Sayan Coffee</h3>
+                    <p style="color: var(--coffee-accent); margin-bottom: 20px; font-size: 16px;">Artisan coffee roasters dedicated to quality, sustainability, and the perfect cup.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="copyright">&copy;2025 Sayan Coffee Roasters.All right reserved</div>
+                <div class="footer-column">
+                    <h3>Join Our Journey</h3>
+                    <p style="margin-bottom: 15px; font-size: 14px; color: #ccc;">Subscribe for brewing guides and exclusive offers.</p>
+                    <form id="newsletter-form" style="display: flex; gap: 10px;">
+                        <input type="email" id="newsletter-email" placeholder="Email Address" required style="flex: 1; padding: 10px; border-radius: 5px; border: none; background: #333; color: #fff;">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px 20px; border-radius: 5px;">Join</button>
+                    </form>
+                </div>
+                <div class="footer-column">
+                    <h3>Roastery Hours</h3>
+                    <ul class="footer-links" style="color: var(--coffee-accent); font-size: 16px;">
+                        <li>Mon - Fri: 8:00 AM - 8:00 PM</li>
+                        <li>Sat: 9:00 AM - 9:00 PM</li>
+                        <li>Sun: 10:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
             </div>
-        </footer>
+            <div class="copyright">&copy; 2025 Sayan Coffee Roasters. All rights reserved.</div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
